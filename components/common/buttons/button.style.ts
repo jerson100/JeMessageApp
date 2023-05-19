@@ -5,16 +5,18 @@ export const buttonStyles = cva(
   {
     variants: {
       color: {
-        blue: "hover:bg-blue-600 focus:ring-blue-400",
-        red: "hover:bg-red-600 focus:ring-red-400",
-        green: "hover:bg-green-600 focus:ring-green-400",
-        yellow: "hover:bg-yellow-600 focus:ring-yellow-400",
-        gray: "hover:bg-gray-600 focus:ring-gray-400",
-        sky: "hover:bg-sky-600 focus:ring-sky-400",
+        blue: "hover:bg-blue-600 focus:ring-blue-400 border border-blue-500",
+        red: "hover:bg-red-600 focus:ring-red-400 border border-red-500",
+        green:
+          "hover:bg-green-600 focus:ring-green-400 border border-green-500",
+        yellow:
+          "hover:bg-yellow-600 focus:ring-yellow-400 border border-yellow-500",
+        gray: "hover:bg-gray-600 focus:ring-gray-400 border border-gray-500",
+        sky: "hover:bg-sky-600 focus:ring-sky-400 border border-sky-500",
       },
       variant: {
         contained: "text-white",
-        outlined: "border hover:text-white",
+        outlined: "hover:text-white",
       },
       fullWidth: {
         true: "w-full",
@@ -78,32 +80,32 @@ export const buttonStyles = cva(
       {
         variant: "outlined",
         color: "blue",
-        className: "border-blue-500 text-blue-500",
+        className: "text-blue-500",
       },
       {
         variant: "outlined",
         color: "red",
-        className: "border-red-500 text-red-500",
+        className: "text-red-500",
       },
       {
         variant: "outlined",
         color: "green",
-        className: "border-green-500 text-green-500",
+        className: "text-green-500",
       },
       {
         variant: "outlined",
         color: "yellow",
-        className: "border-yellow-500 text-yellow-500",
+        className: "text-yellow-500",
       },
       {
         variant: "outlined",
         color: "gray",
-        className: "border-gray-500 text-gray-500",
+        className: "text-gray-500",
       },
       {
         variant: "outlined",
         color: "sky",
-        className: "border-sky-500 text-sky-500",
+        className: "text-sky-500",
       },
     ],
   }
