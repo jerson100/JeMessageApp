@@ -35,7 +35,13 @@ const RegisterForm = () => {
       <Form className="w-full flex flex-col gap-6 items-center">
         <Input id="name" name="name" label="Name" size="medium" />
         <Input id="email" name="email" label="Email" />
-        <Input id="password" name="password" label="Password" type="password" />
+        <Input
+          id="password"
+          name="password"
+          label="Password"
+          type="password"
+          autoComplete="new-password"
+        />
         <Button type="submit" fullWidth>
           Register
         </Button>

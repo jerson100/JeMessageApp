@@ -11,4 +11,5 @@ export interface InputPropsType
   required?: boolean;
   disabled?: boolean;
   label?: string;
+  autoComplete?: string;
 }

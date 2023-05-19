@@ -27,8 +27,13 @@ const LoginForm = () => {
       validationSchema={AuthLoginSchema}
     >
       <Form className="w-full flex flex-col gap-6 items-center">
-        <Input id="email" name="email" label="Email" />
-        <Input id="password" name="password" label="Password" />
+        <Input id="email" name="email" label="Email" autoComplete="username" />
+        <Input
+          id="password"
+          name="password"
+          label="Password"
+          autoComplete="current-password"
+        />
         <Button type="submit" fullWidth>
           Sign In
         </Button>

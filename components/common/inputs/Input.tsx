@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { ErrorMessage, Field } from "formik";
+import { ErrorMessage, Field, FieldProps } from "formik";
 import { ElementSizeTypeE } from "@/assets/consts/form.const";
 import { inputVariantsStyle } from "./input.style";
 import { InputPropsType } from "./input.interface";
@@ -13,7 +13,9 @@ const Input = ({
   required = false,
   label,
   size = ElementSizeTypeE.MEDIUM,
+  autoComplete = "off",
 }: InputPropsType) => {
+  //   const field = useField(name);
   return (
     <div className="flex flex-col gap-2 w-full">
       {label && (
@@ -26,15 +28,20 @@ const Input = ({
           </label>
         </div>
       )}
-      <Field
-        type={type}
-        id={id}
-        name={name}
-        placeholder={placeholder}
-        className={inputVariantsStyle({
-          size,
-        })}
-      />
+      <Field name={name}>
+        {({ field }: FieldProps) => (
+          <input
+            {...field}
+            type={type}
+            id={id}
+            className={inputVariantsStyle({
+              size,
+            })}
+            autoComplete={autoComplete}
+            placeholder={placeholder}
+          />
+        )}
+      </Field>
       <ErrorMessage
         name={name}
         render={(message) => (
