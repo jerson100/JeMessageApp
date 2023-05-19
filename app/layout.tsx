@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "JeMessageApp",
-  description: "Messenger Clone with Next.js",
+  description: "Messenger Clone with Next13",
 };
 
 export default function RootLayout({

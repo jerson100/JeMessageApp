@@ -15,9 +15,9 @@ export async function middleware(req: NextRequest) {
       return NextResponse.redirect(new URL("/", req.url));
     }
   } else {
-    console.log(req.nextUrl.pathname);
+    // console.log(req.nextUrl.pathname);
     if (req.nextUrl.pathname === "" || req.nextUrl.pathname === "/") {
-      console.log("estas ingresando al home,,,,");
+      //   console.log("estas ingresando al home,,,,");
       return NextResponse.redirect(new URL("/auth/login", req.url));
     }
   }
