@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import { BsGithub, BsGoogle } from "react-icons/bs";
@@ -7,6 +7,7 @@ import { Input } from "@/components/common/inputs";
 import { Button, IconButton } from "@/components/common/buttons";
 import TitleSeparator from "@/components/common/TitleSeparator/TitleSeparator";
 import Link from "next/link";
+import { signIn } from "next-auth/react";
 
 const AuthLoginSchema = Yup.object().shape({
   email: Yup.string()
@@ -17,6 +18,7 @@ const AuthLoginSchema = Yup.object().shape({
 });
 
 const LoginForm = () => {
+  const [loading, setLoading] = useState(false);
   return (
     <Formik
       onSubmit={(values) => console.log(values)}
@@ -34,13 +36,25 @@ const LoginForm = () => {
           label="Password"
           autoComplete="current-password"
         />
-        <Button type="submit" fullWidth>
+        <Button type="submit" fullWidth disabled={loading}>
           Sign In
         </Button>
         <TitleSeparator text="Or continue with" />
         <div className="grid grid-cols-2 gap-4 w-full">
-          <IconButton icon={BsGithub} variant="outlined" />
-          <IconButton icon={BsGoogle} variant="outlined" />
+          <IconButton icon={BsGithub} variant="outlined" disabled={loading} />
+          <IconButton
+            icon={BsGoogle}
+            variant="outlined"
+            disabled={loading}
+            onClick={async () => {
+              setLoading(true);
+              await signIn("google", {
+                redirect: true,
+                callbackUrl: "/",
+              });
+              setLoading(false);
+            }}
+          />
         </div>
         <p>
           New in JeMessageApp?
