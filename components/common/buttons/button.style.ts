@@ -1,3 +1,4 @@
+import { ElementSizeType } from "@/assets/consts/form.const";
 import { cva } from "class-variance-authority";
 
 export const buttonStyles = cva(
@@ -41,7 +42,7 @@ export const buttonStyles = cva(
     defaultVariants: {
       color: "sky",
       variant: "contained",
-      size: "medium",
+      size: ElementSizeType.MEDIUM,
       rounded: "medium",
       fullWidth: false,
       disabled: false,

@@ -2,13 +2,14 @@ import { FC } from "react";
 // import clsx from "clsx";
 import { buttonStyles } from "./button.style";
 import { ButtonProps } from "./buttons.interface";
+import { ElementSizeType } from "@/assets/consts/form.const";
 
 export const Button: FC<ButtonProps> = ({
   className,
   children,
   variant = "contained",
   color = "sky",
-  size = "medium",
+  size = ElementSizeType.MEDIUM,
   disabled = false,
   rounded = "medium",
   fullWidth = false,
