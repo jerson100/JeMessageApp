@@ -1,8 +1,8 @@
 import { FC } from "react";
 import Button from "./Button";
 import { IconType } from "react-icons";
-import { ButtonProps } from "@/types";
 import clsx from "clsx";
+import { ButtonProps } from "./buttons.interface";
 
 interface IconButtonProps extends ButtonProps {
   icon: IconType;
