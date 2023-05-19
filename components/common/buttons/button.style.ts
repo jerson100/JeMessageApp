@@ -37,7 +37,7 @@ export const buttonStyles = cva(
         big: "px-6 py-4 text-xl leading-9",
       },
       disabled: {
-        true: "bg-opacity-50 cursor-not-allowed pointer-events-none",
+        true: "opacity-50 cursor-not-allowed pointer-events-none",
       },
     },
     defaultVariants: {
