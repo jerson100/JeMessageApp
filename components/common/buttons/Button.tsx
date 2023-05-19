@@ -12,10 +12,12 @@ export const Button: FC<ButtonProps> = ({
   disabled = false,
   rounded = "medium",
   fullWidth = false,
+  type = "button",
   ...props
 }) => {
   return (
     <button
+      type={type}
       {...props}
       className={buttonStyles({
         color,
