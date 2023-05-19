@@ -1,16 +1,9 @@
 "use client";
 import React from "react";
 import { ErrorMessage, Field } from "formik";
-
-interface InputProps {
-  id: string;
-  name: string;
-  type?: string;
-  placeholder?: string;
-  required?: boolean;
-  disabled?: boolean;
-  label?: string;
-}
+import { ElementSizeTypeE } from "@/assets/consts/form.const";
+import { inputVariantsStyle } from "./input.style";
+import { InputPropsType } from "./input.interface";
 
 const Input = ({
   id,
@@ -19,7 +12,8 @@ const Input = ({
   type = "text",
   required = false,
   label,
-}: InputProps) => {
+  size = ElementSizeTypeE.MEDIUM,
+}: InputPropsType) => {
   return (
     <div className="flex flex-col gap-2 w-full">
       {label && (
@@ -37,7 +31,9 @@ const Input = ({
         id={id}
         name={name}
         placeholder={placeholder}
-        className="border-gray-200 border px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent w-full"
+        className={inputVariantsStyle({
+          size,
+        })}
       />
       <ErrorMessage
         name={name}
