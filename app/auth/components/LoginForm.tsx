@@ -3,7 +3,7 @@ import React from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import { BsGithub, BsGoogle } from "react-icons/bs";
-import { Input } from "@/components/common/Input";
+import { Input } from "@/components/common/Inputs";
 import { Button, IconButton } from "@/components/common/buttons";
 import TitleSeparator from "@/components/common/TitleSeparator/TitleSeparator";
 import Link from "next/link";

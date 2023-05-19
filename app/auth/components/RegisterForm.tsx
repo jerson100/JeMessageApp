@@ -3,7 +3,7 @@ import React from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import { BsGithub, BsGoogle } from "react-icons/bs";
-import { Input } from "@/components/common/Input";
+import { Input } from "@/components/common/Inputs";
 import { Button, IconButton } from "@/components/common/buttons";
 import TitleSeparator from "@/components/common/TitleSeparator/TitleSeparator";
 import Link from "next/link";
@@ -33,7 +33,7 @@ const RegisterForm = () => {
       validationSchema={AuthRegisterSchema}
     >
       <Form className="w-full flex flex-col gap-6 items-center">
-        <Input id="name" name="name" label="Name" />
+        <Input id="name" name="name" label="Name" size="medium" />
         <Input id="email" name="email" label="Email" />
         <Input id="password" name="password" label="Password" type="password" />
         <Button type="submit" fullWidth>
