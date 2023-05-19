@@ -6,5 +6,3 @@ import { OptionalNonNullableObject } from "@/types";
 export interface ButtonProps
   extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, "disabled" | "color">,
     OptionalNonNullableObject<VariantProps<typeof buttonStyles>> {}
-
-const d: ButtonProps = {};

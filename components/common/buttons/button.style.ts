@@ -1,4 +1,8 @@
-import { ElementSizeType } from "@/assets/consts/form.const";
+import {
+  ElementSizeTypeE,
+  FormElementSizeConfig,
+} from "@/assets/consts/form.const";
+import { RoundedConfig, RoundedTypeE } from "@/assets/consts/rounded.const";
 import { cva } from "class-variance-authority";
 
 export const buttonStyles = cva(
@@ -22,19 +26,8 @@ export const buttonStyles = cva(
       fullWidth: {
         true: "w-full",
       },
-      rounded: {
-        none: "rounded-none",
-        small: "rounded-sm",
-        medium: "rounded-md",
-        large: "rounded-lg",
-        full: "rounded-full",
-      },
-      size: {
-        small: "px-3 py-2 text-sm leading-4",
-        medium: "px-4 py-2 text-md leading-6",
-        large: "px-5 py-3 text-lg leading-8",
-        big: "px-6 py-4 text-xl leading-9",
-      },
+      rounded: RoundedConfig.rounded,
+      size: FormElementSizeConfig.size,
       disabled: {
         true: "bg-opacity-50 cursor-not-allowed pointer-events-none",
       },
@@ -42,8 +35,8 @@ export const buttonStyles = cva(
     defaultVariants: {
       color: "sky",
       variant: "contained",
-      size: ElementSizeType.MEDIUM,
-      rounded: "medium",
+      size: ElementSizeTypeE.MEDIUM,
+      rounded: RoundedTypeE.MEDIUM,
       fullWidth: false,
       disabled: false,
     },

@@ -3,6 +3,7 @@ import Button from "./Button";
 import { IconType } from "react-icons";
 import clsx from "clsx";
 import { ButtonProps } from "./buttons.interface";
+import { ElementSizeTypeE } from "@/assets/consts/form.const";
 
 interface IconButtonProps extends ButtonProps {
   icon: IconType;
@@ -17,7 +18,7 @@ const sizes = {
 
 export const IconButton: FC<IconButtonProps> = ({
   icon: Icon,
-  size = "medium",
+  size = ElementSizeTypeE.MEDIUM,
   ...props
 }) => {
   const buttonClass = clsx(
