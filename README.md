@@ -1,6 +1,6 @@
 # JeMessageApp
 
-Aplicación de mensajería en tiempo real desarrollado con NextJs 13, autenticación con NextAuth.js con los adaptadores respectivos para google, github, twitter. Base de datos mongoDb con mongoose, pusher.js para la comunicación en tiempo real, tailwindcss para los estilos y despliegue en vercel.
+Aplicación de mensajería en tiempo real desarrollado con NextJs 13, autenticación con NextAuth.js con los adaptadores respectivos para google, github, twitter, linkedin, twitch. Base de datos mongoDb con mongoose, pusher.js para la comunicación en tiempo real, tailwindcss para los estilos y despliegue en vercel.
 
 ## Imágenes
 
@@ -29,7 +29,6 @@ Aplicación de mensajería en tiempo real desarrollado con NextJs 13, autenticac
     * "formik": "^2.2.9",
     * "next": "13.4.2",
     * "next-auth": "^4.22.1",
-    * "nextjs-progressbar": "^0.0.16",
     * "nextjs-toploader": "^1.4.2",
     * "postcss": "8.4.23",
     * "react": "18.2.0",

@@ -2,18 +2,11 @@
 import React, { useState } from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
-import {
-  BsGithub,
-  BsGoogle,
-  BsTwitter,
-  BsTwitch,
-  BsLinkedin,
-} from "react-icons/bs";
 import { Input } from "@/components/common/inputs";
-import { Button, IconButton } from "@/components/common/buttons";
+import { Button } from "@/components/common/buttons";
 import TitleSeparator from "@/components/common/TitleSeparator/TitleSeparator";
 import Link from "next/link";
-import { signIn } from "next-auth/react";
+import LoginProviders from "./LoginProviders";
 
 const AuthRegisterSchema = Yup.object().shape({
   name: Yup.string()
@@ -54,68 +47,7 @@ const RegisterForm = () => {
           Register
         </Button>
         <TitleSeparator text="Or continue with" />
-        <div className="grid grid-cols-5 gap-4 w-full">
-          <IconButton
-            icon={BsGithub}
-            variant="outlined"
-            disabled={loading}
-            onClick={async () => {
-              setLoading(true);
-              await signIn("github", {
-                redirect: true,
-                callbackUrl: "/",
-              });
-            }}
-          />
-          <IconButton
-            icon={BsGoogle}
-            variant="outlined"
-            disabled={loading}
-            onClick={async () => {
-              setLoading(true);
-              await signIn("google", {
-                redirect: true,
-                callbackUrl: "/",
-              });
-            }}
-          />
-          <IconButton
-            icon={BsTwitter}
-            variant="outlined"
-            disabled={loading}
-            onClick={async () => {
-              setLoading(true);
-              await signIn("twitter", {
-                redirect: true,
-                callbackUrl: "/",
-              });
-            }}
-          />
-          <IconButton
-            icon={BsTwitch}
-            variant="outlined"
-            disabled={loading}
-            onClick={async () => {
-              setLoading(true);
-              await signIn("twitch", {
-                redirect: true,
-                callbackUrl: "/",
-              });
-            }}
-          />
-          <IconButton
-            icon={BsLinkedin}
-            variant="outlined"
-            disabled={loading}
-            onClick={async () => {
-              setLoading(true);
-              await signIn("linkedin", {
-                redirect: true,
-                callbackUrl: "/",
-              });
-            }}
-          />
-        </div>
+        <LoginProviders loading={loading} setLoading={setLoading} />
         <p>
           Already have an account?
           <Link href="/auth/login" className="font-bold underline ml-2">

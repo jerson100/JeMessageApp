@@ -20,7 +20,6 @@
     "formik": "^2.2.9",
     "next": "13.4.2",
     "next-auth": "^4.22.1",
-    "nextjs-progressbar": "^0.0.16",
     "nextjs-toploader": "^1.4.2",
     "postcss": "8.4.23",
     "react": "18.2.0",

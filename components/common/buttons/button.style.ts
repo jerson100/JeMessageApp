@@ -15,6 +15,10 @@ export const buttonStyles = cva(
           "hover:bg-yellow-600 focus:ring-yellow-400 border border-yellow-500",
         gray: "hover:bg-gray-600 focus:ring-gray-400 border border-gray-500",
         sky: "hover:bg-sky-600 focus:ring-sky-400 border border-sky-500",
+        purple:
+          "hover:bg-purple-600 focus:ring-purple-400 border border-purple-500",
+        orange:
+          "hover:bg-orange-600 focus:ring-orange-400 border border-orange-500",
       },
       variant: {
         contained: "text-white",
@@ -124,6 +128,16 @@ export const buttonStyles = cva(
         className: "bg-sky-500",
       },
       {
+        variant: "contained",
+        color: "purple",
+        className: "bg-purple-500",
+      },
+      {
+        variant: "contained",
+        color: "orange",
+        className: "bg-orange-500",
+      },
+      {
         variant: "outlined",
         color: "blue",
         className: "text-blue-500",
@@ -152,6 +166,16 @@ export const buttonStyles = cva(
         variant: "outlined",
         color: "sky",
         className: "text-sky-500",
+      },
+      {
+        variant: "outlined",
+        color: "purple",
+        className: "text-purple-500",
+      },
+      {
+        variant: "outlined",
+        color: "orange",
+        className: "text-orange-500",
       },
     ],
   }
