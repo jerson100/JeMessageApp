@@ -31,13 +31,17 @@ export const buttonStyles = cva(
         full: "rounded-full",
       },
       size: {
-        small: "px-3 py-2 text-sm leading-4",
-        medium: "px-4 py-2 text-md leading-6",
-        large: "px-5 py-3 text-lg leading-8",
-        big: "px-6 py-4 text-xl leading-9",
+        small: "text-sm leading-4",
+        medium: "text-md leading-6",
+        large: "text-lg leading-8",
+        big: "text-xl leading-9",
       },
       disabled: {
         true: "opacity-50 cursor-not-allowed pointer-events-none",
+      },
+      equalsPadding: {
+        true: "",
+        false: "",
       },
     },
     defaultVariants: {
@@ -49,6 +53,46 @@ export const buttonStyles = cva(
       disabled: false,
     },
     compoundVariants: [
+      {
+        equalsPadding: true,
+        size: "small",
+        className: "px-2 py-2",
+      },
+      {
+        equalsPadding: true,
+        size: "medium",
+        className: "px-2 py-2",
+      },
+      {
+        equalsPadding: true,
+        size: "large",
+        className: "px-3 py-3",
+      },
+      {
+        equalsPadding: true,
+        size: "big",
+        className: "px-4 py-4",
+      },
+      {
+        equalsPadding: false,
+        size: "small",
+        className: "px-3 py-2",
+      },
+      {
+        equalsPadding: false,
+        size: "medium",
+        className: "px-4 py-2",
+      },
+      {
+        equalsPadding: false,
+        size: "large",
+        className: "px-5 py-3",
+      },
+      {
+        equalsPadding: false,
+        size: "big",
+        className: "px-6 py-4",
+      },
       {
         variant: "contained",
         color: "blue",

@@ -15,11 +15,17 @@ const page = async () => {
   const session = await getServerSession({});
 
   return (
-    <div>
+    <div className="flex flex-col gap-4">
       <p>{session?.user?.name}</p>
       <p>{session?.user?.email}</p>
-      <img src={session?.user?.image || ""} alt={session?.user?.name || ""} />
-      <LogoutButton />
+      <img
+        src={session?.user?.image || ""}
+        alt={session?.user?.name || ""}
+        className="w-40 h-40"
+      />
+      <div>
+        <LogoutButton />
+      </div>
     </div>
   );
 };

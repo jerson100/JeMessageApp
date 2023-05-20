@@ -5,7 +5,7 @@ import clsx from "clsx";
 import { ButtonProps } from "./buttons.interface";
 import { ElementSizeTypeE } from "@/assets/consts/form.const";
 
-interface IconButtonProps extends ButtonProps {
+interface IconButtonProps extends Omit<ButtonProps, "equalsPadding"> {
   icon: IconType;
 }
 
@@ -22,15 +22,14 @@ export const IconButton: FC<IconButtonProps> = ({
   ...props
 }) => {
   const buttonClass = clsx(
-    "flex items-center",
-    size === "small" && "h-[16px]",
-    size === "medium" && "h-[24px]",
-    size === "large" && "h-[32px]",
-    size === "big" && "h-[40px]"
+    "flex items-center justify-center",
+    size === "small" && "h-[16px] w-[16px]",
+    size === "medium" && "h-[24px] w-[24px]",
+    size === "large" && "h-[32px] w-[32px]",
+    size === "big" && "h-[40px] w-[40px]"
   );
-
   return (
-    <Button {...props} size={size}>
+    <Button {...props} size={size} equalsPadding>
       <div className={buttonClass}>
         <Icon size={sizes[size] - 5} />
       </div>

@@ -4,6 +4,7 @@ import { buttonStyles } from "./button.style";
 import { ButtonProps } from "./buttons.interface";
 import { ElementSizeTypeE } from "@/assets/consts/form.const";
 import { RoundedTypeE } from "@/assets/consts/rounded.const";
+import clsx from "clsx";
 
 export const Button: FC<ButtonProps> = ({
   className,
@@ -15,20 +16,25 @@ export const Button: FC<ButtonProps> = ({
   rounded = RoundedTypeE.MEDIUM,
   fullWidth = false,
   type = "button",
+  equalsPadding = false,
   ...props
 }) => {
   return (
     <button
       type={type}
       {...props}
-      className={buttonStyles({
-        color,
-        size,
-        disabled,
-        rounded,
-        fullWidth: fullWidth,
-        variant,
-      })}
+      className={clsx(
+        buttonStyles({
+          color,
+          size,
+          disabled,
+          rounded,
+          fullWidth,
+          equalsPadding,
+          variant,
+        }),
+        className
+      )}
     >
       {children}
     </button>
