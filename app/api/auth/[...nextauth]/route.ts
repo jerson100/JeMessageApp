@@ -3,6 +3,7 @@ import GoogleProvider from "next-auth/providers/google";
 import GitHubProvider from "next-auth/providers/github";
 import TwitterProvider from "next-auth/providers/twitter";
 import TwitchProvider from "next-auth/providers/twitch";
+import LinkedinProvider from "next-auth/providers/linkedin";
 
 // console.log(process.env.GOOGLE_CLIENT_ID, process.env.GOOGLE_CLIENT_SECRET);
 
@@ -24,6 +25,10 @@ const handler = NextAuth({
     TwitchProvider({
       clientId: process.env.TWITCH_CLIENT_ID as string,
       clientSecret: process.env.TWITCH_CLIENT_SECRET as string,
+    }),
+    LinkedinProvider({
+      clientId: process.env.LINKEDIN_CLIENT_ID as string,
+      clientSecret: process.env.LINKEDIN_CLIENT_SECRET as string,
     }),
     // ...add providers here
   ],

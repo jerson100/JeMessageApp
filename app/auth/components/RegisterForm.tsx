@@ -2,7 +2,13 @@
 import React, { useState } from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
-import { BsGithub, BsGoogle, BsTwitter, BsTwitch } from "react-icons/bs";
+import {
+  BsGithub,
+  BsGoogle,
+  BsTwitter,
+  BsTwitch,
+  BsLinkedin,
+} from "react-icons/bs";
 import { Input } from "@/components/common/inputs";
 import { Button, IconButton } from "@/components/common/buttons";
 import TitleSeparator from "@/components/common/TitleSeparator/TitleSeparator";
@@ -48,7 +54,7 @@ const RegisterForm = () => {
           Register
         </Button>
         <TitleSeparator text="Or continue with" />
-        <div className="grid grid-cols-4 gap-4 w-full">
+        <div className="grid grid-cols-5 gap-4 w-full">
           <IconButton
             icon={BsGithub}
             variant="outlined"
@@ -92,6 +98,18 @@ const RegisterForm = () => {
             onClick={async () => {
               setLoading(true);
               await signIn("twitch", {
+                redirect: true,
+                callbackUrl: "/",
+              });
+            }}
+          />
+          <IconButton
+            icon={BsLinkedin}
+            variant="outlined"
+            disabled={loading}
+            onClick={async () => {
+              setLoading(true);
+              await signIn("linkedin", {
                 redirect: true,
                 callbackUrl: "/",
               });
