@@ -41,7 +41,18 @@ const LoginForm = () => {
         </Button>
         <TitleSeparator text="Or continue with" />
         <div className="grid grid-cols-2 gap-4 w-full">
-          <IconButton icon={BsGithub} variant="outlined" disabled={loading} />
+          <IconButton
+            icon={BsGithub}
+            variant="outlined"
+            disabled={loading}
+            onClick={async () => {
+              setLoading(true);
+              await signIn("github", {
+                redirect: true,
+                callbackUrl: "/",
+              });
+            }}
+          />
           <IconButton
             icon={BsGoogle}
             variant="outlined"
@@ -52,7 +63,6 @@ const LoginForm = () => {
                 redirect: true,
                 callbackUrl: "/",
               });
-              setLoading(false);
             }}
           />
         </div>
