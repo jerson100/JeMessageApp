@@ -3,7 +3,7 @@ import Button from "./Button";
 import { IconType } from "react-icons";
 import clsx from "clsx";
 import { ButtonProps } from "./buttons.interface";
-import { ElementSizeTypeE } from "@/assets/consts/form.const";
+import { ElementSizeTypeE } from "@/app/consts/form.const";
 
 interface IconButtonProps extends Omit<ButtonProps, "equalsPadding"> {
   icon: IconType;

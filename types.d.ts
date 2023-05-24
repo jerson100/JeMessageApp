@@ -1,5 +1,5 @@
-import { FormElementSizeConfig } from "./assets/consts/form.const";
-import { RoundedConfig } from "./assets/consts/rounded.const";
+import { FormElementSizeConfig } from "./app/consts/form.const";
+import { RoundedConfig } from "./app/consts/rounded.const";
 
 export type OptionalNonNullableObject<T extends object> = {
   [P in keyof Partial<T>]: NonNullable<T[P]>;

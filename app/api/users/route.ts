@@ -2,11 +2,11 @@
 // import { NextApiRequest, NextApiHandler } from "next";
 import { NextResponse } from "next/server";
 import bcrypt from "bcrypt";
-import prismaclient from "@/lib/prismadb";
+import prismaclient from "@/app/lib/prismadb";
 
 export const POST = async (req: Request) => {
   const method = req.method;
-  console.log(method);
+  //   console.log(method);
   try {
     if (method === "POST") {
       const { name, email, password } = await req.json();

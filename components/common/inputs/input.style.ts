@@ -1,7 +1,7 @@
 import {
   ElementSizeTypeE,
   FormElementSizeConfig,
-} from "@/assets/consts/form.const";
+} from "@/app/consts/form.const";
 import { cva } from "class-variance-authority";
 
 export const inputVariantsStyle = cva(

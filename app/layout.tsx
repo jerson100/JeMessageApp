@@ -3,6 +3,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import NextTopLoader from "nextjs-toploader";
 import { Session } from "next-auth";
+import ToastContext from "./contexts/ToastContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,6 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <NextTopLoader height={5} />
+        <ToastContext />
         <SessionProvider session={session}>{children}</SessionProvider>
       </body>
     </html>

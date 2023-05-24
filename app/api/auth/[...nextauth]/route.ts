@@ -11,7 +11,7 @@ import bcrypt from "bcrypt";
 
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 
-import prismaClient from "@/lib/prismadb";
+import prismaClient from "@/app/lib/prismadb";
 
 // console.log(process.env.GOOGLE_CLIENT_ID, process.env.GOOGLE_CLIENT_SECRET);
 

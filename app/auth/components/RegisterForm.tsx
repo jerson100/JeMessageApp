@@ -7,6 +7,7 @@ import { Button } from "@/components/common/buttons";
 import TitleSeparator from "@/components/common/TitleSeparator/TitleSeparator";
 import Link from "next/link";
 import LoginProviders from "./LoginProviders";
+import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
 
 const AuthRegisterSchema = Yup.object().shape({
@@ -38,12 +39,16 @@ const RegisterForm = () => {
               "Content-Type": "application/json",
             },
           });
-          console.log(response);
           const data = await response.json();
           console.log(data);
-          router.push("/auth/login");
+          if (response.ok) {
+            toast.success("Account created successfully");
+            router.push("/auth/login");
+          } else {
+            throw data.message;
+          }
         } catch (error) {
-          console.log(error);
+          toast.error(error as string);
         }
         setLoading(false);
       }}
