@@ -7,6 +7,7 @@ import { Button } from "@/components/common/buttons";
 import TitleSeparator from "@/components/common/TitleSeparator/TitleSeparator";
 import Link from "next/link";
 import LoginProviders from "./LoginProviders";
+import { useRouter } from "next/navigation";
 
 const AuthRegisterSchema = Yup.object().shape({
   name: Yup.string()
@@ -23,9 +24,29 @@ const AuthRegisterSchema = Yup.object().shape({
 
 const RegisterForm = () => {
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
   return (
     <Formik
-      onSubmit={(values) => console.log(values)}
+      onSubmit={async (values) => {
+        const { name, email, password } = values;
+        setLoading(true);
+        try {
+          const response = await fetch("/api/users", {
+            method: "POST",
+            body: JSON.stringify({ name, email, password }),
+            headers: {
+              "Content-Type": "application/json",
+            },
+          });
+          console.log(response);
+          const data = await response.json();
+          console.log(data);
+          router.push("/auth/login");
+        } catch (error) {
+          console.log(error);
+        }
+        setLoading(false);
+      }}
       initialValues={{
         name: "",
         email: "",
