@@ -4,6 +4,7 @@ import React from "react";
 // import { getServerSession } from "next-auth";
 // import LogoutButton from "@/components/common/buttons/LogoutButton";
 import EmptyState from "@/components/common/EmptyState";
+import People from "./components/People/People";
 // import Link from "next/link";
 // import { redirect } from "next/navigation";
 
@@ -17,8 +18,15 @@ const page = async () => {
   //   const session = await getServerSession({});
 
   return (
-    <div className="hidden lg:block h-full bg-white pl-80">
-      <EmptyState />
+    <div className="flex h-screen">
+      <div className="w-full lg:w-80 h-full">
+        <People />
+      </div>
+      <div className="hidden lg:flex h-full bg-white flex-grow">
+        <div className="flex-grow">
+          <EmptyState />
+        </div>
+      </div>
     </div>
   );
 };

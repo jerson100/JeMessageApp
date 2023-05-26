@@ -3,9 +3,9 @@ import Navigation from "./components/Navigation";
 
 const Layout = ({ children }: PropsWithChildren) => {
   return (
-    <div className="grid grid-cols-[auto_1fr] min-h-screen">
+    <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr] h-full">
       <Navigation />
-      <main>{children}</main>
+      <main className="h-screen overflow-hidden">{children}</main>
     </div>
   );
 };

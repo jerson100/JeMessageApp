@@ -6,7 +6,7 @@ import getUser from "@/app/actions/GetUser";
 const DesktopNavigation = async () => {
   const user = await getUser();
   return (
-    <div className="hidden lg:flex border border-gray-200 h-screen flex-col justify-between p-4 sticky top-0">
+    <div className="hidden lg:flex border border-gray-200 h-screen flex-col justify-between p-4">
       <nav className="h-full flex flex-col justify-between" role="navigation">
         <DesktopRouteList />
       </nav>
