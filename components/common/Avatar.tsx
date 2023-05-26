@@ -2,14 +2,14 @@ import clsx from "clsx";
 import Image from "next/image";
 import React from "react";
 
-interface UserImageProps {
+interface AvatarProps {
   src?: string | null;
   alt?: string;
   name: string;
   status?: 1 | 0;
 }
 
-const UserImage = ({ src, alt = "", status = 0, name }: UserImageProps) => {
+const Avatar = ({ src, alt = "", status = 0, name }: AvatarProps) => {
   const _statusClassNames = clsx(
     "absolute right-0 top-0 w-2 h-2 rounded-full outline outline-4 outline-white",
     status ? "bg-green-400" : "bg-red-400"
@@ -35,4 +35,4 @@ const UserImage = ({ src, alt = "", status = 0, name }: UserImageProps) => {
   );
 };
 
-export default UserImage;
+export default Avatar;
