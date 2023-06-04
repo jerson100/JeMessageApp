@@ -1,7 +1,7 @@
 import React from "react";
 import Avatar from "@/components/common/Avatar";
 import DesktopRouteList from "./DesktopRouteList";
-import getUser from "@/app/actions/GetUser";
+import getUser from "@/actions/GetUser";
 
 const DesktopNavigation = async () => {
   const user = await getUser();

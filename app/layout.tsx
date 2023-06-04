@@ -3,7 +3,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import NextTopLoader from "nextjs-toploader";
 import { Session } from "next-auth";
-import ToastContext from "./contexts/ToastContext";
+import ToastContext from "../contexts/ToastContext";
 
 const inter = Inter({ subsets: ["latin"] });
 

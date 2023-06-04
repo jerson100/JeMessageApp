@@ -1,5 +1,5 @@
 "use client";
-import useRoutes from "@/app/hooks/useRoutes";
+import useRoutes from "@/hooks/useRoutes";
 import { LinkIconButton } from "@/components/common/buttons";
 import React from "react";
 

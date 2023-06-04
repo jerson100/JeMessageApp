@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { ErrorMessage, Field, FieldProps } from "formik";
-import { ElementSizeTypeE } from "@/app/consts/form.const";
+import { ElementSizeTypeE } from "@/consts/form.const";
 import { inputVariantsStyle } from "./input.style";
 import { InputPropsType } from "./input.interface";
 

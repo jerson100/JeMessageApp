@@ -15,8 +15,12 @@ export async function middleware(req: NextRequest) {
       return NextResponse.redirect(new URL("/", req.url));
     }
   } else {
-    // console.log(req.nextUrl.pathname);
-    if (req.nextUrl.pathname === "" || req.nextUrl.pathname === "/") {
+    console.log(req.nextUrl.pathname);
+    if (
+      req.nextUrl.pathname === "" ||
+      req.nextUrl.pathname === "/" ||
+      req.nextUrl.pathname === "/conversations"
+    ) {
       //   console.log("estas ingresando al home,,,,");
       return NextResponse.redirect(new URL("/auth/login", req.url));
     }
@@ -25,5 +29,5 @@ export async function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/auth/login", "/auth/register", "/"],
+  matcher: ["/auth/login", "/auth/register", "/", "/conversations"],
 };

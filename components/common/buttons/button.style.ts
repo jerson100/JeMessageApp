@@ -1,5 +1,5 @@
-import { ElementSizeTypeE } from "@/app/consts/form.const";
-import { RoundedTypeE } from "@/app/consts/rounded.const";
+import { ElementSizeTypeE } from "@/consts/form.const";
+import { RoundedTypeE } from "@/consts/rounded.const";
 import { cva } from "class-variance-authority";
 
 export const buttonStyles = cva(

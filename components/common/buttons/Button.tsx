@@ -2,8 +2,8 @@ import { FC } from "react";
 // import clsx from "clsx";
 import { buttonStyles } from "./button.style";
 import { ButtonProps } from "./buttons.interface";
-import { ElementSizeTypeE } from "@/app/consts/form.const";
-import { RoundedTypeE } from "@/app/consts/rounded.const";
+import { ElementSizeTypeE } from "@/consts/form.const";
+import { RoundedTypeE } from "@/consts/rounded.const";
 import clsx from "clsx";
 
 export const Button: FC<ButtonProps> = ({

@@ -1,5 +1,5 @@
 import { getServerSession } from "next-auth";
-import prisma from "app/lib/prismadb";
+import prisma from "@/lib/prismadb";
 
 const getUser = async () => {
   const session = await getServerSession();

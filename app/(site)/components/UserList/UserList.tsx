@@ -1,4 +1,4 @@
-import getUsers from "@/app/actions/GetUsers";
+import getUsers from "@/actions/GetUsers";
 import React from "react";
 import UserItem from "./UserItem";
 

@@ -21,6 +21,11 @@ model User {
     updatedAt     DateTime  @updatedAt
     status        Int       @default(1)
     Account       Account[]
+
+    Conversation   Conversation[] @relation(fields: [conversationId], references: [id])
+    conversationId String[]       @db.ObjectId
+
+    @@map("users")
 }
 
 model Account {
@@ -40,4 +45,19 @@ model Account {
     user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
     @@unique([provider, providerAccountId])
+    @@map("accounts")
+}
+
+model Conversation {
+    id            String   @id @default(auto()) @map("_id") @db.ObjectId
+    name          String?
+    isGroup       Boolean? @default(false)
+    lastMessageAt DateTime @default(now())
+    createdAt     DateTime @default(now())
+    updatedAt     DateTime @updatedAt
+    status        Int      @default(1)
+    users         User[]   @relation(fields: [userIds], references: [id])
+    userIds       String[] @db.ObjectId
+
+    @@map("conversations")
 }

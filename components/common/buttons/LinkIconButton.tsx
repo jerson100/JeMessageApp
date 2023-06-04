@@ -2,7 +2,7 @@ import { FC } from "react";
 import { IconType } from "react-icons";
 import clsx from "clsx";
 import { LinkButtonProps } from "./buttons.interface";
-import { ElementSizeTypeE } from "@/app/consts/form.const";
+import { ElementSizeTypeE } from "@/consts/form.const";
 import LinkButton from "./LinkButton";
 
 interface IconButtonProps extends Omit<LinkButtonProps, "equalsPadding"> {

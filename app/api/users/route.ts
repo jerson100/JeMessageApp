@@ -2,7 +2,7 @@
 // import { NextApiRequest, NextApiHandler } from "next";
 import { NextResponse } from "next/server";
 import bcrypt from "bcrypt";
-import prismaclient from "@/app/lib/prismadb";
+import prismaclient from "@/lib/prismadb";
 
 export const POST = async (req: Request) => {
   const method = req.method;

@@ -1,7 +1,7 @@
 import React from "react";
 
 const ConversationPage = () => {
-  return <div className="hidden"></div>;
+  return <div className="flex-grow">Conversation ID Page</div>;
 };
 
 export default ConversationPage;
